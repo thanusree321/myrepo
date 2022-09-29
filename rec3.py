@@ -12,9 +12,10 @@ def gng(recs, findredc, replace):
         if found:
             A.append(ele)
             ele.update(replace)
-    print(A)
 
-gng( [{"fname": "abc01", "lname": "xyz02", "age": "32",
+    return exp
+
+recs =[{"fname": "abc01", "lname": "xyz02", "age": "32",
          "address": "111 xyz rd, abc city, MD, 21774"},
         {"fname": "abc02", "lname": "xyz02", "age": "32",
          "address": "112 xyz rd, abc city, MD, 21774"},
@@ -23,5 +24,11 @@ gng( [{"fname": "abc01", "lname": "xyz02", "age": "32",
         {"fname": "abc03", "lname": "xyz02", "age": "22",
          "address": "114 xyz rd, abc city, MD, 21774"}
         ]
-, {"fname": "abc02", "lname": "xyz02"}
-,{"address": "214 xyz11 rd, abc11 city, MD, 21774"})
+find = {"fname": "abc02", "lname": "xyz02"}
+replace = {"address": "214 xyz11 rd, abc11 city, MD, 21774"}
+exp = {"fname": "abc02", "lname": "xyz02", "age": "43", "address": "214 xyz11 rd, abc11 city, MD, 21774"}
+
+if gng(recs, find, replace) == exp:
+    print("test passed")
+else:
+    print("test failed")
